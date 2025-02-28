@@ -1,22 +1,21 @@
 import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { api } from "./api";
- // Certifique-se de que está exportando corretamente o objeto API
-
+ 
 const TarefaForm = ({ onTarefaAdicionada }) => {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
 
   const adicionarTarefa = async (e) => {
-    e.preventDefault(); // Previne o envio do formulário padrão (que recarregaria a página)
+    e.preventDefault(); 
 
     try {
       const res = await api.post("/tarefas", { titulo, descricao });
-      onTarefaAdicionada(res.data); // Chama a função de callback passando a nova tarefa
-      setTitulo("");  // Limpa o campo título
-      setDescricao("");  // Limpa o campo descrição
+      onTarefaAdicionada(res.data); 
+      setTitulo("");  
+      setDescricao("");  
     } catch (error) {
-      console.error("Erro ao adicionar tarefa:", error); // Exibe erro no console, caso ocorra
+      console.error("Erro ao adicionar tarefa:", error); 
     }
   };
 
