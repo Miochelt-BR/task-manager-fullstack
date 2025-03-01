@@ -1,4 +1,4 @@
-./* Estilo global */
+/* Estilo global */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #131212;
@@ -7,6 +7,7 @@ body {
   padding: 0;
 }
 
+/* Aplicação */
 .App {
   display: flex;
   flex-direction: column;
@@ -45,11 +46,12 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito de transformação ao passar o mouse */
 }
 
 button:hover {
   background-color: #21a1f1;
+  transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
 
 button:focus {
@@ -68,12 +70,13 @@ input {
   color: #333; /* Cor escura para texto */
   width: 100%;
   max-width: 400px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
 }
 
 input:focus {
   border-color: #61dafb;
   outline: none;
+  box-shadow: 0 0 5px rgba(97, 218, 251, 0.5); /* Efeito de foco suave */
 }
 
 /* Estilo das Listas */
@@ -93,9 +96,11 @@ li {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Efeito de hover nas listas */
 li:hover {
   background-color: #333333;
+  transform: scale(1.02); /* Efeito de aumento nas listas ao passar o mouse */
 }

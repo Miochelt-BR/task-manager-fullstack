@@ -1,101 +1,181 @@
-/* Estilo global */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #131212;
-  color: #f0f0f0; /* Cor clara para o texto */
-  margin: 0;
-  padding: 0;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-/* Logo */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-/* Cabeçalho */
-.App-header {
-  background-color: #282c34;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #ffffff;
+/* Títulos */
+.titulo-principal {
   text-align: center;
-  padding: 20px;
+  color: #3F51B5;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 2px 4px rgba(63, 81, 181, 0.5);
+  animation: fadeInDown 1s ease-out;
 }
 
-/* Estilo de Botões */
-button {
-  padding: 12px 24px;
-  background-color: #61dafb;
-  color: #131212;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #21a1f1;
-}
-
-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.5); /* Efeito de foco */
-}
-
-/* Estilo dos Inputs */
-input {
-  padding: 12px;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  color: #333; /* Cor escura para texto */
-  width: 100%;
-  max-width: 400px;
-  transition: border-color 0.3s ease;
-}
-
-input:focus {
-  border-color: #61dafb;
-  outline: none;
-}
-
-/* Estilo das Listas */
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+/* Formulário */
+.formulario {
   max-width: 600px;
-}
-
-li {
-  background-color: #2d2d2d;
-  color: #f0f0f0;
-  margin: 12px 0;
-  padding: 15px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2E3B4E;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slideInUp 1s ease-out;
 }
 
-/* Efeito de hover nas listas */
-li:hover {
-  background-color: #333333;
+.campo {
+  margin-bottom: 15px;
+}
+
+/* Botões */
+.btn-adicionar,
+.btn-editar,
+.btn-buscar {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #6200EE;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-adicionar:hover,
+.btn-editar:hover,
+.btn-buscar:hover {
+  background-color: #3700B3;
+  transform: scale(1.05);
+  color: #fff;
+}
+
+.btn-adicionar:disabled,
+.btn-editar:disabled,
+.btn-buscar:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Lista de Tarefas */
+.lista-tarefas {
+  margin-top: 30px;
+}
+
+.tarefa-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #911c1c;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.detalhes-tarefa {
+  display: flex;
+  flex-direction: column;
+}
+
+.detalhes-tarefa strong {
+  font-size: 1.2rem;
+  color: #ECEFF1;
+}
+
+.detalhes-tarefa small {
+  font-size: 1rem;
+  color: #B0BEC5;
+}
+
+.acoes-tarefa button {
+  margin-left: 10px;
+}
+
+/* Botões da Tarefa */
+.btn-editar-tarefa {
+  background-color: #0288D1;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-editar-tarefa:hover {
+  background-color: #0277BD;
+  transform: scale(1.05);
+}
+
+.btn-excluir-tarefa {
+  background-color: #D32F2F;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-excluir-tarefa:hover {
+  background-color: #C62828;
+  transform: scale(1.05);
+}
+
+/* Estilos para inputs e selects */
+.campo input:focus,
+.campo select:focus {
+  border-color: #6200EE;
+  outline: none;
+  box-shadow: 0 0 5px rgba(98, 0, 238, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .formulario {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .btn-adicionar,
+  .btn-editar,
+  .btn-buscar {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .tarefa-item {
+    padding: 10px;
+  }
+
+  .titulo-principal {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .campo input,
+  .campo select {
+    font-size: 1rem;
+  }
+
+  /* Ajuste para tamanho de botões e título em telas menores */
+  .titulo-principal {
+    font-size: 1.6rem;  /* Ajusta o título para telas menores */
+  }
+}
+
+/* Animações */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
