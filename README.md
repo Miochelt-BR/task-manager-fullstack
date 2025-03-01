@@ -11,8 +11,8 @@ Este é um projeto full stack de um **Gerenciador de Tarefas**, desenvolvido com
 ### **Back-end**
 - Node.js
 - Express.js
-- Sequelize
-- SQLite (em memória)
+- Sequelize (ORM)
+- MySQL (para persistência de dados)
 
 ### **Front-end**
 - React.js
